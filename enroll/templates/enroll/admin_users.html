@@ -1,0 +1,36 @@
+{% extends 'enroll/base.html' %}
+
+{% block content %}
+<div class="container mt-4">
+    <h2 class="text-center alert alert-info">Admin - User List</h2>
+
+    {% if students %}
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>Sr No.</th>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Password</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for student in students %}
+                <tr>
+                    <td>{{ forloop.counter }}</td>
+                    <td>{{ student.name }}</td>
+                    <td>{{ student.email }}</td>
+                    <td>{{ student.password }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    {% else %}
+        <h4 class="text-center alert alert-warning">No Users Found</h4>
+    {% endif %}
+
+    <div class="text-center mt-3">
+        <a href="{% url 'add_data' %}" class="btn btn-primary">Add New User</a>
+    </div>
+</div>
+{% endblock content %}

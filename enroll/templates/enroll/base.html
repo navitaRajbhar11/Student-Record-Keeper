@@ -1,0 +1,25 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% block logo %} <link rel="shortcut icon" href="{% static 'enroll/images/anime1.jpg'%}" type="image/x-icon"> {% endblock logo %} 
+    {% block title %} <title> Website </title> {% endblock title %} 
+    <link rel="stylesheet" href="{% static 'enroll/css/bootstrap.css'%}">
+</head>
+<body>
+    <div class="container mt-5">
+        
+
+        {% block content %} 
+        {% endblock content %}
+
+    </div>
+
+{% comment %}     
+    <script src="{% static 'enroll/js/jquery.js'%}"></script>
+    <script src="{% static 'enroll/js/popper.js'%}"></script>
+    <script src="{% static 'enroll/js/bootstrap.js'%}"></script> {% endcomment %}
+</body>
+</html>

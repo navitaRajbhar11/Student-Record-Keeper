@@ -1,0 +1,21 @@
+{% extends 'enroll/base.html' %}
+{% load static %}
+
+{% block content %}
+
+<div class="row">
+    <div class="col-sm-4 text-center">
+        <h4 class="text-center alert alert-info">Add New Student</h4>
+        <form enctype="multipart/form-data" action="{% url 'add_data' %}" method="POST">
+            {% csrf_token %}
+            {{forms.as_p}}
+            <input type="Submit" class="btn btn-success" value="Add">
+            <a href="{% url 'show'%}" class="btn btn-danger"> View </a>
+        </form>
+    </div>
+    <div class="col-sm-8 text-center">
+        <img src="{% static 'enroll/images/stu.jpg'%}" alt="img" height = "500px" width="500px">
+    </div>
+</div>
+    
+{% endblock content %}
